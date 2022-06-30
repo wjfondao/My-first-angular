@@ -1,0 +1,11 @@
+<h2>39: Enhancing nglf with an Else Condition</h2>
+<!-- Button : add server-->
+<button type="button" class="btn btn-primary mb-3" (click)="onCreatServer()">
+  Add server
+</button>
+
+<p *ngIf="serverCreated; else noServer">Server was created!!!</p>
+
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>

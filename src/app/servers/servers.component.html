@@ -1,0 +1,56 @@
+<!-- 32. Passing and Using Data with Event Binding -->
+<h2>32. Passing and Using Data with Event Binding</h2>
+<label>Input name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<hr />
+
+<!-- 34. Two-Way-Databinding -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+<p>{{ serverName }}</p>
+
+<hr />
+<!-- // Property Binding -->
+<h1>Property Binding</h1>
+<button
+  type="button"
+  class="btn btn-primary mb-3"
+  [disabled]="!allowNewSever"
+  (click)="onCreatServer()"
+>
+  Add server
+</button>
+
+<!-- // Event Binding show text -->
+<p>{{ serverCreationStatus }}</p>
+
+<hr />
+<!-- // Property Binding vs String Interpolation-->
+<!-- // 1 want to show -> String Interpolation -->
+<p>{{ allowNewSever }}</p>
+
+<!-- // 2 want to show -> String with Property Binding-->
+<p [innerText]="allowNewSever"></p>
+
+<hr />
+<app-server></app-server>
+<h3 style="color: blueviolet">Hello!!</h3>
+
+<hr />
+<!-- 38. Using ngIf to Output Data Conditionally -->
+<h2>38. Using ngIf to Output Data Conditionally</h2>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+<button
+  type="button"
+  class="btn btn-primary mb-3"
+  [disabled]="!allowNewSever"
+  (click)="onCreatServer()"
+>
+  Add server
+</button>
+
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+
+<hr />
+
